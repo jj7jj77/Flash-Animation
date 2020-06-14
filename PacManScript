@@ -1,0 +1,98 @@
+stop();
+
+//Up: y axis
+Up.addEventListener(MouseEvent.CLICK,goUp);
+function goUp(evt:MouseEvent):void
+{
+	if (Pman.y>0)
+		Pman.y = Pman.y-40;
+	else
+		Pman.y = 710;
+	//end if
+} //enf ftn goUp
+
+//Down: y axis
+Dn.addEventListener(MouseEvent.CLICK,goDn);
+function goDn(evt:MouseEvent):void
+{
+	if (Pman.y<700)
+		Pman.y = Pmaan.y+40;
+	else
+		Pman.y = -10;
+	//end if
+} //end ftn goDn
+
+//Left: x axis
+Lt.addEventListener(MouseEvent.CLICK,goLt);
+function goLt(evt:MouseEvent):void
+{
+	if (Pman.x>0)
+		Pman.x = Pman.x-40;
+	else
+		Pman.x = 910;
+	//end if
+} //end ftn goLt
+
+//Right: y axis
+Rt.addEventListener(MouseEvent.CLICK,goRt);
+function goRt(evt:MouseEvent):void
+{
+	if (Pman.x<900)
+		Pman.x = Pman.x+40;
+	else
+		Pman.x = -10;
+	//end if
+} //end ftn goRt
+
+//Rotate
+Rot.addEventListener(MouseEvent.CLICK,goRot);
+function goRot(evt:MouseEvent):void
+{
+	Pman.rotation = Pman.rotation - 45; //can change it
+} //end ftn goRot
+
+//Disappear
+Dis.addEventListener(MouseEvent.CLICK,goDis);
+function goDis(evt:MouseEvent):void
+{
+	Pman.alpha = Pman.alpha - .2; //20% less opeg
+} //end ftn goDis
+
+//Grow
+Gro.addEventListener(MouseEvent.CLICK,goGro);
+function goGro(evt:MouseEvent):void
+{
+	Pman.width = Pman.width + 60;
+	Pman.height = Pman.height + 60;
+} //end ftn goGro
+
+
+//Reset
+Res.addEventListener(MouseEvent.CLICK,goRes);
+function goRes(evt:MouseEvent):void
+{
+	Pman.width = 440.00;
+	Pman.height = 115.00;
+	Pman.x = 115;
+	Pman.y = 325;
+	Pman.alpha = 1;
+	Pman.rotation = 0;
+} //end ftn goRes
+
+//Other part of the Script
+stop();
+
+BTN.addEventListener(MouseEvent.CLICK,doMsgDT);
+function doMsgDT(evt:MouseEvent):void
+{
+	MsgDT.text = "Click the PacMan " + NumbIT.text +" times and go to the " + DirIT.text;
+	//data types Number and string
+	//String to concatenate with the rest of the string 
+	//concatenate with the given text that was typed in the previous boxes
+}//eng ftn doMsg
+
+
+
+
+
+
