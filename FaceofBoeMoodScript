@@ -3,13 +3,13 @@ stop();
 BTN.addEventListener(MouseEvent.CLICK,showFace);
 function showFace(evt:MouseEvent):void
 {
-	if (MoodIT.text == 'Happy')
+	if (MoodIT.text == 'happy')
 		Face.gotoAndStop('Happy');
-	else if (MoodIT.text == 'Sad')
+	else if (MoodIT.text == 'sad')
 		Face.gotoAndStop('Sad');
-	else if (MoodIT.text == 'Angry')
+	else if (MoodIT.text == 'angry')
 		Face.gotoAndStop('Angry');
-	else if (MoodIT.text == 'Tired')
+	else if (MoodIT.text == 'tired')
 		Face.gotoAndStop('Tired');
 	else
 		Face.gotoAndStop('Normal');
