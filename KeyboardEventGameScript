@@ -1,0 +1,110 @@
+import flash.events.KeyboardEvent;
+
+stop();
+
+Coin.x = Math.random() * 900;
+Coin.y = Math.random() * 700;
+
+Ghost.x = Math.random() * 900;
+Ghost.y = Math.random() * 700;
+
+Coin.alpha = 0.2;
+Ghost.alpha = 0.2;
+
+var c:int;
+c = 0;
+
+Score.text = String(c)
+
+stage.addEventListener(KeyboardEvent.KEY_DOWN,moveTed);
+
+function hitOrMiss():void
+{
+	if (Ted.hitTestObject(Ghost) == true)
+	{	
+		Ted.gotoAndStop("scared");
+		c = c - 1;
+		Score.text = String(c);
+		Ghost.x = Math.random() * 900;
+		Ghost.y = Math.random() * 700;
+	}//end if
+	if (Ted.hitTestObject(Coin) == true)
+	{	
+		Ted.gotoAndStop("excited");
+		c = c + 5;
+		Score.text = String(c);
+		Coin.x = Math.random() * 900;
+		Coin.y = Math.random() * 700;
+	}//end if
+	
+	if (c >= 25)
+	{
+		gotoAndStop(1,"Win");
+		Ted.gotoAndStop("excited");
+	}
+	else
+		if (c <= -5)
+		{
+			gotoAndStop(1,"Lose");
+			Ted.gotoAndStop("scared");
+		}
+		//endif
+}//end ftn hitOrMiss
+
+function moveTed(evt:KeyboardEvent):void
+{
+	switch(evt.keyCode)
+	{
+		case Keyboard.DOWN:
+			Ted.gotoAndStop("front");
+		if (Ted.y > 690)
+			Ted.y = 10;
+		else
+			Ted.y = Ted.y + 30;
+		//end if
+		hitOrMiss();
+		break;
+		case Keyboard.UP:
+			Ted.gotoAndStop("back");
+		if (Ted.y > 10)
+			Ted.y = Ted.y - 30;
+		else
+			Ted.y = 690;
+		//end if
+		hitOrMiss();
+		break;
+		case Keyboard.LEFT:
+			Ted.gotoAndStop("left");
+		if(Ted.x > 10)
+			Ted.x = Ted.x - 30;
+		else
+			Ted.x = 890;
+		//endif
+		hitOrMiss();
+		break;
+		case Keyboard.RIGHT:
+			Ted.gotoAndStop("right");
+		if(Ted.x > 890)
+			Ted.x = 10;
+		else
+			Ted.x = Ted.x + 30;
+		//endif
+		hitOrMiss();
+		break;
+		default:
+			trace ("Hit the left,right,up,down keys");
+		break;
+		//endif
+	}//end switch
+}//end ftn moveTed
+
+
+//Other Sections of KeyboardEvent
+//Win
+stop();
+Ted.gotoAndStop("excited");
+
+//Lose
+stop();
+Ted.gotoAndStop("scared");
+
