@@ -1,0 +1,27 @@
+import flash.events.MouseEvent;
+
+stop();
+
+BTN1.addEventListener(MouseEvent.CLICK,playClassic);
+function playClassic(evt:MouseEvent):void
+{
+	gotoAndPlay(1,"Classic");
+}//end ftn playClassic
+
+BTN2.addEventListener(MouseEvent.CLICK,playMotion);
+function playMotion(evt:MouseEvent):void
+{
+	gotoAndPlay(1,"Motion");
+}//end ftn playMotion
+
+BTN3.addEventListener(MouseEvent.CLICK,playMask);
+function playMask(evt:MouseEvent):void
+{
+	gotoAndPlay(1,"Masking");
+}//end ftn playMask
+
+BTN4.addEventListener(MouseEvent.CLICK,playExit);
+function playExit(evt:MouseEvent):void
+{
+	gotoAndPlay(1,"Exit");
+}//end ftn playExit
