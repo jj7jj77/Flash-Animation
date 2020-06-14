@@ -25,3 +25,16 @@ function playExit(evt:MouseEvent):void
 {
 	gotoAndPlay(1,"Exit");
 }//end ftn playExit
+
+//Within the other Scripts 
+//classic
+gotoAndPlay(1,"Menu");
+
+//Motion
+gotoAndPlay(1,"Menu");
+
+//Masking
+gotoAndPlay(1,"Menu");
+
+//Exit
+stop();
