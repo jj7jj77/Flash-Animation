@@ -1,0 +1,29 @@
+stop();
+
+RB.addEventListener(MouseEvent.MOUSE_DOWN,dragIt2);
+RB.addEventListener(MouseEvent.MOUSE_UP,dropIt2);
+
+PB.addEventListener(MouseEvent.MOUSE_DOWN,dragIt2);
+PB.addEventListener(MouseEvent.MOUSE_UP,dropIt2);
+
+MG.addEventListener(MouseEvent.MOUSE_DOWN,dragIt2);
+MG.addEventListener(MouseEvent.MOUSE_UP,dropIt2);
+
+PS.addEventListener(MouseEvent.MOUSE_DOWN,dragIt2);
+PS.addEventListener(MouseEvent.MOUSE_UP,dropIt2);
+
+RS.addEventListener(MouseEvent.MOUSE_DOWN,dragIt2);
+RS.addEventListener(MouseEvent.MOUSE_UP,dropIt2);
+
+MinS.addEventListener(MouseEvent.MOUSE_DOWN,dragIt2);
+MinS.addEventListener(MouseEvent.MOUSE_UP,dropIt2);
+
+function dragIt2(evt:MouseEvent):void
+{
+	evt.target.startDrag();
+}
+
+function dropIt2(evt:MouseEvent):void
+{
+	evt.target.stopDrag();
+}//end ftn dropIt
