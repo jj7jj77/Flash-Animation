@@ -1,0 +1,14 @@
+import flash.events.MouseEvent;
+
+stop();
+
+BTN.addEventListener(MouseEvent.CLICK,showRandom);
+function showRandom(evt:MouseEvent):void
+{
+	var randNo:Number; //declare variables and then give identifer the name of the type
+	randNo = Math.random(); //random generator comes from Math.random
+	RN.text = String(randNo);
+	RN10.text = String(Math.ceil(randNo*10)); //math.ciel is a function
+	RN100.text = String(Math.ceil(randNo*100));
+	RN52.text = String(Math.ceil(randNo*52));
+}//end ftn showRandom
