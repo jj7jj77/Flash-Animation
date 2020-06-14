@@ -1,0 +1,39 @@
+stop();
+
+B1.addEventListener(MouseEvent.CLICK,playMicDressUp);
+B2.addEventListener(MouseEvent.CLICK,playMinDressUp);
+B3.addEventListener(MouseEvent.CLICK,playMMFace);
+B4.addEventListener(MouseEvent.CLICK,playMMLove);
+B5.addEventListener(MouseEvent.CLICK,playHowOld);
+B6.addEventListener(MouseEvent.CLICK,playEnd);
+
+
+function playMicDressUp(event:MouseEvent):void
+{
+	gotoAndPlay(1,"MicDressUp");
+}//end ftn playMicDressUp
+
+function playMinDressUp(event:MouseEvent):void
+{
+	gotoAndPlay(1,"MinDressUp");
+}//end ftn playMinDressUp
+
+function playMMFace(event:MouseEvent):void
+{
+	gotoAndPlay(1,"MMFace");
+}//end ftn playMMFace
+
+function playMMLove(event:MouseEvent):void
+{
+	gotoAndPlay(1,"MMLove");
+}//end ftn playMMLove
+
+function playHowOld(event:MouseEvent):void
+{
+	gotoAndPlay(1,"HowOld");
+}//end ftn playHowOld
+
+function playEnd(event:MouseEvent):void
+{
+	gotoAndPlay(1,"End");
+}//end ftn playEnd
