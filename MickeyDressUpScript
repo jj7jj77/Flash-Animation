@@ -1,0 +1,23 @@
+stop();
+
+BS.addEventListener(MouseEvent.MOUSE_DOWN,dragIt);
+BS.addEventListener(MouseEvent.MOUSE_UP,dropIt);
+
+RS.addEventListener(MouseEvent.MOUSE_DOWN,dragIt);
+RS.addEventListener(MouseEvent.MOUSE_UP,dropIt);
+
+G.addEventListener(MouseEvent.MOUSE_DOWN,dragIt);
+G.addEventListener(MouseEvent.MOUSE_UP,dropIt);
+
+S.addEventListener(MouseEvent.MOUSE_DOWN,dragIt);
+S.addEventListener(MouseEvent.MOUSE_UP,dropIt);
+
+function dragIt(evt:MouseEvent):void
+{
+	evt.target.startDrag();
+}
+
+function dropIt(evt:MouseEvent):void
+{
+	evt.target.stopDrag();
+}//end ftn dropIt
