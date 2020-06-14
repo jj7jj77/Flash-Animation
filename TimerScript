@@ -1,0 +1,21 @@
+import flash.utils.Timer;
+import flash.events.TimerEvent;
+
+stop();
+
+//Game Timer
+
+var c:Number;
+c = 5; //amount of time required // can be changed to set a diff value
+//new variable
+var myTimer:Timer = new Timer(1000, c);  //always put 1000
+
+myTimer.addEventListener(TimerEvent.TIMER, countDown);
+myTimer.start();
+
+function countDown(evt:TimerEvent): void
+{
+	MyTxt.text = String((c) - myTimer.currentCount); //dynamic textbox showing current count
+	if (((c) - myTimer.currentCount) == 0)
+		gotoAndStop(2);
+}//end ftn countDown
