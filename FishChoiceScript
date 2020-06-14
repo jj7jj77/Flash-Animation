@@ -1,0 +1,11 @@
+stop();
+
+BTN.addEventListener(MouseEvent.CLICK,showFish);
+function showFish(evt:MouseEvent):void
+{
+	if (FishIT.text == 'clown')
+		Fish.gotoAndStop('Clown');
+	else
+		Fish.gotoAndStop('Blue');
+	//endif
+}//end ftn showFish
