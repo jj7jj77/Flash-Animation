@@ -1,0 +1,79 @@
+stop();
+
+//Up: y axis
+Up.addEventListener(MouseEvent.CLICK,goUp);
+function goUp(evt:MouseEvent):void
+{
+	if (Bob.y>0)
+		Bob.y = Bob.y-40;
+	else
+		Bob.y = 710;
+	//end if
+} //enf ftn goUp
+
+//Down: y axis
+Dn.addEventListener(MouseEvent.CLICK,goDn);
+function goDn(evt:MouseEvent):void
+{
+	if (Bob.y<700)
+		Bob.y = Bob.y+40;
+	else
+		Bob.y = -10;
+	//end if
+} //end ftn goDn
+
+//Left: x axis
+Lt.addEventListener(MouseEvent.CLICK,goLt);
+function goLt(evt:MouseEvent):void
+{
+	if (Bob.x>0)
+		Bob.x = Bob.x-40;
+	else
+		Bob.x = 910;
+	//end if
+} //end ftn goLt
+
+//Right: y axis
+Rt.addEventListener(MouseEvent.CLICK,goRt);
+function goRt(evt:MouseEvent):void
+{
+	if (Bob.x<900)
+		Bob.x = Bob.x+40;
+	else
+		Bob.x = -10;
+	//end if
+} //end ftn goRt
+
+//Rotate
+Rot.addEventListener(MouseEvent.CLICK,goRot);
+function goRot(evt:MouseEvent):void
+{
+	Bob.rotation = Bob.rotation - 45; //can change it
+} //end ftn goRot
+
+//Disappear
+Dis.addEventListener(MouseEvent.CLICK,goDis);
+function goDis(evt:MouseEvent):void
+{
+	Bob.alpha = Bob.alpha - .2; //20% less opeg
+} //end ftn goDis
+
+//Grow
+Gro.addEventListener(MouseEvent.CLICK,goGro);
+function goGro(evt:MouseEvent):void
+{
+	Bob.width = Bob.width + 60;
+	Bob.height = Bob.height + 60;
+} //end ftn goGro
+
+//Reset
+Res.addEventListener(MouseEvent.CLICK,goRes);
+function goRes(evt:MouseEvent):void
+{
+	Bob.width = 263.15;
+	Bob.height = 249.70;
+	Bob.x = 300;
+	Bob.y = 400;
+	Bob.alpha = 1;
+	Bob.rotation = 0;
+} //end ftn goRes
