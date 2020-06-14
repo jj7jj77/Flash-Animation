@@ -1,0 +1,147 @@
+stop();
+
+
+P.x = Math.random() * 800;
+P.y = Math.random() * 700;
+
+H.x = Math.random() * 800;
+H.y = Math.random() * 700;
+
+P.alpha = 0.2;
+H.alpha = 0.2;
+
+var c:int;
+c = 0;
+
+Score.text = String(c)
+
+stage.addEventListener(KeyboardEvent.KEY_DOWN,moveMickey);
+function hitOrMiss():void
+{
+	if (Mickey1.hitTestObject(H) == true)
+	{	
+		Mickey1.gotoAndStop("Mickey");
+		c = c - 1;
+		Score.text = String(c);
+		H.x = Math.random() * 800;
+		H.y = Math.random() * 700;
+	}//end if
+	if (Mickey1.hitTestObject(P) == true)
+	{	
+		Mickey1.gotoAndStop("Mickey");
+		c = c + 5;
+		Score.text = String(c);
+		P.x = Math.random() * 800;
+		P.y = Math.random() * 700;
+	}//end if
+}
+stage.addEventListener(KeyboardEvent.KEY_DOWN,moveMinnie);
+function hitOrMiss1():void
+{
+	if (Minnie2.hitTestObject(H) == true)
+	{	
+		Minnie2.gotoAndStop("Minnie");
+		c = c - 1;
+		Score.text = String(c);
+		H.x = Math.random() * 800;
+		H.y = Math.random() * 700;
+	}//end if
+	if (Minnie2.hitTestObject(P) == true)
+	{	
+		Minnie2.gotoAndStop("Minnie");
+		c = c + 5;
+		Score.text = String(c);
+		P.x = Math.random() * 800;
+		P.y = Math.random() * 700;
+	}//end if
+}//end ftn hitOrMiss
+
+function moveMickey(evt:KeyboardEvent):void
+{
+	switch(evt.keyCode)
+	{
+		case Keyboard.DOWN:
+			Mickey1.gotoAndStop("Front");
+		if (Mickey1.y > 690)
+			Mickey1.y = 10;
+		else
+			Mickey1.y = Mickey1.y + 30;
+		//end if 
+		hitOrMiss();
+		break;
+		case Keyboard.UP:
+			Mickey1.gotoAndStop("Back");
+		if (Mickey1.y > 10)
+			Mickey1.y = Mickey1.y - 30;
+		else
+			Mickey1.y = 690;
+		//end if
+		hitOrMiss();
+		break;
+		case Keyboard.RIGHT:
+			Mickey1.gotoAndStop("Right");
+		if(Mickey1.x > 790)
+			Mickey1.x = 10;
+		else
+			Mickey1.x = Mickey1.x + 30;
+		//endif		
+		hitOrMiss();
+		break;
+		case Keyboard.LEFT:
+			Mickey1.gotoAndStop("Left");
+		if(Mickey1.x > 10)
+			Mickey1.x = Mickey1.x - 30;
+		else
+			Mickey1.x = 790;
+		//endif
+		hitOrMiss();
+		break;
+		default:
+			trace ("Hit the left,right,up,down keys");
+		break;
+		//endif 
+	}//end of switch
+}//end of ftn Mickey1
+function moveMinnie(evt:KeyboardEvent):void
+{	
+	switch(evt.keyCode)
+	{
+		case Keyboard.DOWN:
+			Minnie2.gotoAndStop("Front");
+		if (Minnie2.y > 690)
+			Minnie2.y = 10;
+		else
+			Minnie2.y = Minnie2.y + 30;
+		//end if
+		hitOrMiss1();
+		break;
+		case Keyboard.UP:
+			Minnie2.gotoAndStop("Back");
+		if (Minnie2.y > 10)
+			Minnie2.y = Minnie2.y - 30;
+		else
+			Minnie2.y = 690;
+		//end if
+		hitOrMiss1();
+		break;
+		case Keyboard.RIGHT:
+			Minnie2.gotoAndStop("Right");
+		if(Minnie2.x > 790)
+			Minnie2.x = 10;
+		else
+			Minnie2.x = Minnie2.x + 30;
+		//endif		
+		hitOrMiss1();
+		break;
+		case Keyboard.LEFT:
+			Minnie2.gotoAndStop("Left");
+		if(Minnie2.x > 10)
+			Minnie2.x = Minnie2.x - 30;
+		else
+			Minnie2.x = 790;
+		//endif
+		hitOrMiss1();
+		break;
+		//endif
+	}//end switch
+}//end ftn moveMinnie2
