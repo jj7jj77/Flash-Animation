@@ -1,0 +1,10 @@
+stop();
+
+BTN.addEventListener(MouseEvent.CLICK,doMsgDT);
+function doMsgDT(evt:MouseEvent):void
+{
+	MsgDT.text = "Hello " +"Nice Guess, Mickey and Minnie have been in love for " +  String(Number(YrIT.text) + 20); 
+	//data types Number and string
+	//String to concatenate with the rest of the string 
+	//concatenate with the given text that was typed in the previous boxes
+}//eng ftn doMsg
